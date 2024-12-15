@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 const mongoURI =
   "mongodb+srv://neoGStudent:neoG123@neog.8oxbf.mongodb.net/?retryWrites=true&w=majority&appName=neoG";
 mongoose
-  .connect(mongoURI)
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   })
